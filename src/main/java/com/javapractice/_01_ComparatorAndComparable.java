@@ -47,6 +47,8 @@ class SalaryComparator implements Comparator<Employee> {
 }
 
 
+
+
 public class _01_ComparatorAndComparable {
     public static void main(String[] args) {
 
@@ -64,5 +66,13 @@ public class _01_ComparatorAndComparable {
         employees.sort(new NameComparator());
         System.out.println("Sorted by Name: " + employees);
 
+//        // 🔹 Search by Name (Alphabetically)
+//        Employee nameResult = searchByName(employees, "Alice");
+//        System.out.println(nameResult != null ? "Found by Name: " + nameResult : "Employee not found.");
+
+    }
+
+    public  static List<Employee> searchByName (List<Employee> employees, String name) {
+        return  employees.stream().filter((emp) -> emp.name.equalsIgnoreCase(name)).toList();
     }
 }
